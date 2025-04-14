@@ -25,7 +25,29 @@ function calculate(){
    }
    catch(error){
     showInput.value = "syntax error"
+    setTimeout(
+    () => {
+        showInput.value = ''
+    }, 1000
+   )
    }
+   
     
-    
+}
+
+document.addEventListener('keydown',keyPress);
+
+function keyPress(event){
+    let key = event.key;
+
+    if(/[\d\+\%\-\*\/\.]/.test(key)){
+        appendToInput(key);
+    }
+    if(key === 'Enter'){
+        event.preventDefault()
+        calculate()
+    }
+    if(key === 'Backspace'){
+        del()
+    }
 }
