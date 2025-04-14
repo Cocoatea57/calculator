@@ -2,21 +2,22 @@ const showInput = document.getElementById('input');
 const clickTone = new Audio('buttonclick.mp3');
 const equaltone = new Audio('equaltone.mp3')
 
+//funtion to show input on the display
 function appendToInput(input){
     clickTone.play()
     showInput.value += input
 };
-
+// function to delete from back
 function del(){
     clickTone.play()
     showInput.value = showInput.value.slice(0, -1);
 }
-
+//function to clear screen
 function clearAll(){
     clickTone.play()
     showInput.value = ""
 };
-
+// function to perform calculations
 function calculate(){
     equaltone.play()
    try{
@@ -34,7 +35,7 @@ function calculate(){
    
     
 }
-
+// keyboard integration
 document.addEventListener('keydown',keyPress);
 
 function keyPress(event){
