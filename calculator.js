@@ -51,4 +51,7 @@ function keyPress(event){
     if(key === 'Backspace'){
         del()
     }
+    if(key === 'Delete'){
+        clearAll()
+    }
 }
